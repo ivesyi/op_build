@@ -68,8 +68,7 @@ nohup python PurchaseCommand3.py > out.log &
 python test.py
 
 # 根据选择强制移动相应的脚本，替换已存在的文件
-mv -f "/root/Documents/MULTI_ITEMS/start${choice}.sh" "/root/Documents/MULTI_ITEMS/start.sh
-
+mv -f "/root/Documents/MULTI_ITEMS/start${choice}.sh" "/root/Documents/MULTI_ITEMS/start.sh"
 echo "已选择并移动start${choice}.sh为start.sh"
 
 # 为shell赋权
@@ -78,7 +77,7 @@ chmod +x /root/Documents/monitor.sh
 chmod +x /root/Documents/MULTI_ITEMS/start.sh
 
 # 启动rust
-/root/Documents/MULTI_ITEMS/start.sh
+cd /root/Documents/MULTI_ITEMS && ./start.sh
 
 # 添加crontab任务
 (crontab -l 2>/dev/null; echo "*/10 * * * * /root/Documents/monitor.sh") | crontab -
