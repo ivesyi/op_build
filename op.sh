@@ -1,8 +1,8 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # 询问用户输入新的 IPV6_SUBNET 值
 echo "请输入新的 IPV6_SUBNET 值:"
-read NEW_IPV6_SUBNE
+read NEW_IPV6_SUBNET
 
 # 询问用户输入token
 echo "请输入哪吒监控的token:"
@@ -37,7 +37,7 @@ unzip /root/Documents/chrome-driver-rust.zip -d /root/Documents
 tar -xzf /root/Documents/libcurl/libcurl-impersonate-v0.6.1.x86_64-linux-gnu.tar.gz -C /root/Documents/libcurl
 
 # 替换 /root/Documents/MULTI_ITEMS/.env 文件中的 IPV6_SUBNET 值
-sed -i "s/^IPV6_SUBNET=.*/IPV6_SUBNET=${NEW_IPV6_SUBNET}/" /root/Documents/MULTI_ITEMS/.env
+sed -i "s|^IPV6_SUBNET=.*|IPV6_SUBNET=${NEW_IPV6_SUBNET}|" /root/Documents/MULTI_ITEMS/.env
 
 ip route add local $NEW_IPV6_SUBNET dev eth0
 sysctl net.ipv6.ip_nonlocal_bind=1
@@ -59,6 +59,7 @@ nohup python PurchaseCommand3.py > out.log &
 python test.py
 
 # 为shell赋权
+chmod +x /root/Documents/chrome-driver-rust
 chmod +x /root/Documents/monitor.sh
 chmod +x /root/Documents/MULTI_ITEMS/start.sh
 
