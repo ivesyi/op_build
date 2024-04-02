@@ -8,6 +8,15 @@ read NEW_IPV6_SUBNET
 echo "请输入哪吒监控的token:"
 read TOKEN
 
+# 提示用户输入选择，并读取输入
+echo "请选择要执行的start脚本，从1到9。默认为1："
+read -r choice
+
+# 验证输入是否为空或者不在1-9之间，如果是，则设置默认值1
+if [[ -z "$choice" ]] || [[ ! "$choice" =~ ^[1-9]$ ]]; then
+    choice=1
+fi
+
 # 安装BBR
 wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh
 chmod 755 /opt/bbr.sh
@@ -57,6 +66,11 @@ pip install -r requirements.txt
 # 在后台运行 PurchaseCommand3.py 脚本，并将输出重定向到 out.log
 nohup python PurchaseCommand3.py > out.log &
 python test.py
+
+# 根据选择强制移动相应的脚本，替换已存在的文件
+mv -f "/root/Documents/MULTI_ITEMS/start${choice}.sh" "/root/Documents/MULTI_ITEMS/start.sh
+
+echo "已选择并移动start${choice}.sh为start.sh"
 
 # 为shell赋权
 chmod +x /root/Documents/chrome-driver-rust
