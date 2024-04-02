@@ -56,6 +56,7 @@ pip install -r requirements.txt
 
 # 在后台运行 PurchaseCommand3.py 脚本，并将输出重定向到 out.log
 nohup python PurchaseCommand3.py > out.log &
+python test.py
 
 # 为shell赋权
 chmod +x /root/Documents/monitor.sh
