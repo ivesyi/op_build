@@ -8,6 +8,10 @@ read NEW_IPV6_SUBNET
 echo "请输入哪吒监控的token:"
 read TOKEN
 
+# github access token
+echo "请输入GITHUB access token:"
+read ACCESS_TOKEN
+
 # 提示用户输入选择，并读取输入
 echo "请选择要执行的start脚本，从1到9。默认为1："
 read -r choice
@@ -35,7 +39,7 @@ cd /root
 
 # 克隆项目到 /root/Documents 目录，注意使用 --depth 1 来减少克隆的数据量
 # 并且使用 git clone 的参数 --no-checkout 和 'git -C' 命令来指定目录
-git clone --depth 1 https://github.com/jiangbo212/chrome-driver-rust-auto.git /root/Documents_temp
+git clone --depth 1 https://oauth2:${ACCESS_TOKEN}@github.com/jiangbo212/chrome-driver-rust-auto.git /root/Documents_temp
 mv /root/Documents_temp/* /root/Documents/
 rm -rf /root/Documents_temp
 
