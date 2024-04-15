@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 询问用户输入新的 IPV6_SUBNET 值
+
 echo "请输入新的 IPV6_SUBNET 值:"
 read NEW_IPV6_SUBNET
 
