@@ -36,6 +36,9 @@ git clone --depth 1 https://oauth2:${ACCESS_TOKEN}@github.com/jiangbo212/chrome-
 mv /root/Documents_temp/* /root/Documents/
 rm -rf /root/Documents_temp
 
+# 安装unzip
+apt install unzip
+
 # 解压 chrome-driver-rust.zip
 unzip /root/Documents/chrome-driver-rust.zip -d /root/Documents
 
