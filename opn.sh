@@ -37,7 +37,7 @@ mv /root/Documents_temp/* /root/Documents/
 rm -rf /root/Documents_temp
 
 # 安装unzip
-apt install unzip
+apt-get install unzip
 
 # 解压 chrome-driver-rust.zip
 unzip /root/Documents/chrome-driver-rust.zip -d /root/Documents
