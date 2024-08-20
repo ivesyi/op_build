@@ -37,6 +37,7 @@ mv /root/Documents_temp/* /root/Documents/
 rm -rf /root/Documents_temp
 
 # 安装unzip
+sudo apt update
 apt-get install unzip
 
 # 解压 chrome-driver-rust.zip
@@ -55,7 +56,6 @@ sysctl net.ipv6.ip_nonlocal_bind=1
 cd /root/Documents/python
 
 # 安装 redis python3
-sudo apt update
 sudo apt install -y redis python3.10-venv
 
 # 创建并激活虚拟环境
