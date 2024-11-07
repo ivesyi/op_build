@@ -44,7 +44,7 @@ apt-get install unzip
 unzip /root/Documents/chrome-driver-rust.zip -d /root/Documents
 
 # 解压 libcurl-impersonate-v0.6.1.x86_64-linux-gnu.tar.gz
-mkdir -p /opt/libcurl && tar -xzf /root/Documents/libcurl/libcurl-impersonate-v0.6.1.x86_64-linux-gnu.tar.gz -C /opt/libcurl
+tar -xzf /root/Documents/libcurl/libcurl-impersonate-v0.6.1.x86_64-linux-gnu.tar.gz -C /root/Documents/libcurl
 
 # 替换 /root/Documents/MULTI_ITEMS/.env 文件中的 IPV6_SUBNET 值
 sed -i "s|^IPV6_SUBNET=.*|IPV6_SUBNET=${NEW_IPV6_SUBNET}|" /root/Documents/MULTI_ITEMS/.env
